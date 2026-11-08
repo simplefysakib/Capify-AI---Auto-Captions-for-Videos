@@ -1,0 +1,27 @@
+<p align="center"><img src="icon.png" width="120" alt="Capify AI"></p>
+
+# Capify AI - Auto Captions for Videos
+
+Free Android app that adds clean, word-synced captions to your videos and saves the result to your gallery.
+
+<p align="center">
+<img src="screenshots/capify_1.jpg" width="230"> <img src="screenshots/capify_2.jpg" width="230"> <img src="screenshots/capify_3.jpg" width="230">
+</p>
+
+## Features
+- 10 caption styles, with a live preview where you drag and resize the caption
+- 29 languages, including Hindi, Hinglish and English
+- Word-by-word highlighting, ALL CAPS, key-word highlight, progress bar
+- Export in the original video quality, saved straight to your gallery
+- Captions are made on your phone; your video is not uploaded
+
+## Price
+Capify AI is free to download and use. You get one free video per day (Hormozi style); other styles and extra videos unlock by watching a short ad. The first time you use a language it downloads a speech model once (about 45-375 MB), so use Wi-Fi.
+
+## Download
+Get the APK from the [latest release](../../releases/latest). Android 7.0 or newer.
+
+## Support
+Email: team.simplefy@gmail.com
+
+Made by SimpleFy.
