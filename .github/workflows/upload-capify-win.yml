@@ -1,0 +1,26 @@
+name: upload-capify-win
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Capify_AI_Windows_Setup.exe
+        run: |
+          curl -fsSL --retry 3 -o "Capify_AI_Windows_Setup.exe" "https://tmpfiles.org/dl/w8AC5GhYyEcD/capify_ai_windows_setup.exe"
+          echo "c3c4fb57d63a333ce3d897e378dc166aa2cfadbeb30fef84ba0fcc9422eacfb1  Capify_AI_Windows_Setup.exe" | sha256sum -c -
+          curl -fsS -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Content-Type: application/octet-stream" --data-binary @"Capify_AI_Windows_Setup.exe" "https://uploads.github.com/repos/simplefysakib/Capify-AI---Auto-Captions-for-Videos/releases/438331749/assets?name=Capify_AI_Windows_Setup.exe" | python3 -c "import sys,json;d=json.load(sys.stdin);print(d.get('name'),d.get('size'),d.get('state'),d.get('digest'))"
+      - name: Capify_AI_Windows_32bit_Setup.exe
+        run: |
+          curl -fsSL --retry 3 -o "Capify_AI_Windows_32bit_Setup.exe" "https://tmpfiles.org/dl/wbAH5fhGyxHI/capify_ai_windows_32bit_setup.exe"
+          echo "9e1d5d09e42f4dfc411bfde4e922733f41dda9964deb229efa644c54c9674e1a  Capify_AI_Windows_32bit_Setup.exe" | sha256sum -c -
+          curl -fsS -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Content-Type: application/octet-stream" --data-binary @"Capify_AI_Windows_32bit_Setup.exe" "https://uploads.github.com/repos/simplefysakib/Capify-AI---Auto-Captions-for-Videos/releases/438331749/assets?name=Capify_AI_Windows_32bit_Setup.exe" | python3 -c "import sys,json;d=json.load(sys.stdin);print(d.get('name'),d.get('size'),d.get('state'),d.get('digest'))"
+      - name: Capify_AI_Windows_Portable.zip
+        run: |
+          curl -fsSL --retry 3 -o "Capify_AI_Windows_Portable.zip" "https://tmpfiles.org/dl/wKAX5Thjy8nY/capify_ai_windows_portable.zip"
+          echo "5a18bb46c6fe7ebb2a27710c3f9145325008564ecd346a4534654a00fca59ca4  Capify_AI_Windows_Portable.zip" | sha256sum -c -
+          curl -fsS -X POST -H "Authorization: Bearer $GH_TOKEN" -H "Content-Type: application/octet-stream" --data-binary @"Capify_AI_Windows_Portable.zip" "https://uploads.github.com/repos/simplefysakib/Capify-AI---Auto-Captions-for-Videos/releases/438331749/assets?name=Capify_AI_Windows_Portable.zip" | python3 -c "import sys,json;d=json.load(sys.stdin);print(d.get('name'),d.get('size'),d.get('state'),d.get('digest'))"
