@@ -1,5 +1,8 @@
 name: upload-capify
-on: workflow_dispatch
+on:
+  push:
+    paths: [".github/workflows/upload-capify.yml"]
+  workflow_dispatch
 permissions:
   contents: write
 jobs:
@@ -7,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          curl -fsSL -o Capify_AI.apk "https://tmpfiles.org/dl/1794155061.3f995af15068a226/wLAH5yrF80AT/up_capify.apk"
+          curl -fsSL -o Capify_AI.apk "https://tmpfiles.org/dl/1794155283.7a355771e557bade/wYAT5e2uAlKZ/up_capify.apk"
           ls -l Capify_AI.apk
           test $(stat -c %s Capify_AI.apk) -gt 50000000
           curl -fsS -X POST -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "Content-Type: application/vnd.android.package-archive" --data-binary @Capify_AI.apk "https://uploads.github.com/repos/${{ github.repository }}/releases/438331749/assets?name=Capify_AI.apk" | head -c 300
