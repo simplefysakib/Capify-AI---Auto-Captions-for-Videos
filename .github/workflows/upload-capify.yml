@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          curl -sL -o Capify_AI.apk "https://tmpfiles.org/dl/waA65pCjqQ6o/up_capify.apk"
+          curl -sL -o Capify_AI.apk "https://tmpfiles.org/dl/1794151895.cc42c0ccb472877c/waA65pCjqQ6o/up_capify.apk"
           ls -l Capify_AI.apk
           curl -s -X POST -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" -H "Content-Type: application/vnd.android.package-archive" --data-binary @Capify_AI.apk "https://uploads.github.com/repos/${{ github.repository }}/releases/438331749/assets?name=Capify_AI.apk" | head -c 300
